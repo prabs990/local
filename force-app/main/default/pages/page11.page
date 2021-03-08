@@ -1,0 +1,12 @@
+<apex:page controller="search" sidebar="false">
+<apex:pageBlock ><apex:form >
+<apex:inputtext value="{!keyword}"/>
+<apex:commandButton value="search" action="{!searchbutton}"/>
+<apex:pageBlock rendered="{!re}">
+<apex:pageBlockTable value="{!mer}" var="m1">
+<apex:column value="{!m1.name}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:pageBlock>
+</apex:page>

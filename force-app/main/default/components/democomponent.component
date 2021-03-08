@@ -1,0 +1,9 @@
+<apex:component controller="democomponentcontroller" >
+    <apex:attribute name="att1" type="String" Description="demo component" assignTo="{!objectName}"/>
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!records}" var="sObjectList">
+            <apex:column value="{!sObjectList.id}"/>
+            <apex:column value="{!sObjectList['name']}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:component>

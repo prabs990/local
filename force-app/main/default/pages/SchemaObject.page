@@ -1,0 +1,20 @@
+<apex:page controller="SchemaObject">
+    <apex:pageBlock >
+        <apex:form >
+    	<apex:pageBlockSection >
+        	<apex:pageBlockSectionItem >
+                <apex:outputLabel > List of Objects
+                </apex:outputLabel>
+            	<apex:selectList size="1" value="{!selectedObj}">
+                    <apex:selectOptions value="{!objects}"/>
+                    <apex:actionSupport event="onchange" action="{!details}" reRender="pbs1" />
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!objDescription}" id="pbs1" />
+                </apex:pageBlockSectionItem>
+            
+        </apex:pageBlockSection>
+    </apex:form>        
+    </apex:pageBlock>
+</apex:page>

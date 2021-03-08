@@ -1,0 +1,20 @@
+<template>
+    <lightning-card icon-name="custom:custom26" title="Calculate Interest">
+        <div class="slds-m-around_medium">
+            <lightning-input type="number" label="Enter Principal Amount" value={principal} placeholder="here" onchange={handlePrincipal}></lightning-input>
+                    <lightning-combobox label="Term"
+                                        value={term}
+                                        onchange={handleTerm}
+                                        options={terms}>
+            </lightning-combobox>
+            <lightning-input type="number" label="Enter Rate" value={rate} onchange={handleRate}></lightning-input>
+            
+            
+        </div>
+        <lightning-button label="Compute Interest" variant="brand" onclick={handleCompute} class="slds-padding-around_medium"></lightning-button>
+            
+        <p>
+            Interest is : <lightning-formatted-number format-style="currency" currency-code="USD" value={interest}></lightning-formatted-number>
+        </p> 
+    </lightning-card>
+</template>

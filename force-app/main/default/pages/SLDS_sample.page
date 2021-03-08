@@ -1,0 +1,38 @@
+<apex:page showheader="false" sidebar="false">
+    <html xmlns="http://www.w3.org/2000/svg">
+        <head>
+            <title>Salesforce Lightning Design System Trailhead Module</title>
+            <apex:slds />
+        </head>
+        <body>
+            <div class="slds-scope">
+                <p class="slds-text-heading--label slds-m-bottom--small">
+                    Salesforce Lightning Sample Page
+                </p>
+                
+                <div class="slds-page-header">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-has-flexi-truncate">
+                            
+                            
+                           
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="myapp">
+                    
+                </div>
+                <footer role="contentinfo" class="slds-p-around--large">
+                    <div class="slds-grid slds-grid--align-spread">
+                        <p class="slds-col"> Salesforce Lightning Design System Example </p>
+                        <p class="slds-col"> Singh </p>
+                    </div>
+                </footer>    
+            </div>
+        </body>
+    </html>
+</apex:page>

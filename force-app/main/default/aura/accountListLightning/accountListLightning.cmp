@@ -1,0 +1,7 @@
+<aura:component>
+    <h1>Lightning Component</h1>
+    <aura:attribute name="check" type="String" default="CC"/>
+    {!v.check}
+    <c:accountListLWC/>
+    <c:paginationChild onnext="{!c.handleNext}" onprevious="{!c.handlePrevious}"/>
+</aura:component>

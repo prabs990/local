@@ -1,0 +1,20 @@
+<apex:page controller="soqltest1">
+    <apex:form >
+    <apex:pageblock title="displaying opportunities">
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton value="last 1 years" action="{!last2years}"/>
+            <apex:commandButton value="last year" action="{!closedlastyear}"/>
+            <apex:commandButton value="this year" action="{!closedthisyear}"/>
+            <apex:commandButton value="this month" action="{!closedthismonth}"/>
+            <apex:commandButton value="this week" action="{!closedthisweek}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!oprlist}" var="opp">
+        	<apex:column value="{!opp.name}"/>
+            <apex:column value="{!opp.amount}"/>
+            <apex:column value="{!opp.stagename}"/>
+            <apex:column value="{!opp.closedate}"/>
+            <apex:column value="{!opp.createddate}"/>
+        </apex:pageBlockTable>
+    </apex:pageblock>
+    </apex:form>    
+</apex:page>

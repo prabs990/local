@@ -1,0 +1,22 @@
+<aura:component >
+    <aura:attribute name="messages" type="list" default="['you look nice today','great weather we\'re having','how are you?']"/>
+    <h1> PlayGround 2 component</h1>
+    
+    <h2>Manual List Items</h2>
+    
+    <c:helloMessage2 message="{!v.messages[0]}"/>
+    <c:helloMessage2 message="{!v.messages[1]}"/>
+    <c:helloMessage2 message="{!v.messages[2]}"/>
+    
+	<h2> Iteration List Items</h2>
+    <aura:iteration items="{!v.messages}" var="msg">
+        <p><c:helloMessage2 message="{!msg}"/></p>
+    </aura:iteration>
+    <h2> Conditional List Items</h2>
+    <aura:if isTrue="{!$Browser.isIPhone}">
+        <c:helloMessage2 message="{!v.messages[0]}"/>
+        <aura:set attribute="else">
+            <c:helloMessage2 message="{!v.messages[1]}"/>
+        </aura:set>    
+    </aura:if>
+</aura:component>

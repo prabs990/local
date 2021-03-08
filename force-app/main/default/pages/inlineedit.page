@@ -1,0 +1,69 @@
+<apex:page standardcontroller="contact" extensions="contactExtension">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Import the Design System style sheet -->
+        <link href="http://mottie.github.io/tablesorter/css/theme.default.css" rel="stylesheet" />
+     
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>        
+        <apex:slds />
+    </head>
+    <script type="text/javascript">
+        $(function(){
+          $("#myDummyTable").tablesorter({widgets: ['zebra']});
+        });
+    	$(document).ready(function() {
+       $("tbody>tr").append("<input type='checkbox' />"); 
+        } );
+    </script>
+    <apex:form >
+    
+    <apex:pageblock id="pgblock">
+    <table aria-multiselectable="true" class="slds-table slds-table_cell-buffer slds-table_bordered tablesorter " id="mytable01">
+        <thead>
+        <tr class="slds-line-height_reset">
+            <apex:repeat value="{!$ObjectType.Contact.FieldSets.inlineEdit}" var="f" >
+                <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate">
+<!---                        <apex:outputText styleClass="bold" value="{!$ObjectType.Contact.Fields[f].label}"/> &nbsp; &nbsp; &nbsp;-->
+                        <apex:commandLink styleClass="bold slds-truncate slds-text-title_caps"  value="{!$ObjectType.Contact.Fields[f].label}" action="{!toggleSort}" rerender="pgblock">&nbsp; &nbsp; &nbsp;
+                             <apex:param name="sortField" value="{!f.FieldPath}" assignTo="{!sortField}"/>   
+                        </apex:commandLink>
+                    </div>
+                </th>
+            </apex:repeat>
+        </tr>
+        </thead>
+        <tbody>
+        <apex:repeat value="{!ContactList}" var="obj">
+            <tr class="slds-hint-parent">
+                <apex:repeat value="{!fields}" var="f">
+                    <td data-label="CaseSubject" scope="row">
+                        <apex:outputField value="{!obj[f]}"/> &nbsp; &nbsp; &nbsp;
+                        <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton"/>
+                    </td>
+                </apex:repeat>
+            </tr>
+        </apex:repeat>
+        </tbody>
+    </table>        
+
+    <center>
+        <apex:commandButton value="Save" action="{!save}" id="saveButton" style="display:none"/>
+        <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton" style="display:none" />
+        <apex:commandButton value="First" action="{!first}" />
+        <apex:commandButton value="Previous" action="{!previous}" rendered="{!hasPrevious}"/>
+        <apex:commandButton value="Next" action="{!next}" rendered="{!hasNext}"/>
+        <apex:commandButton value="Last" action="{!last}" />                                
+    </center>
+
+    </apex:pageblock>
+    </apex:form>
+
+</apex:page>

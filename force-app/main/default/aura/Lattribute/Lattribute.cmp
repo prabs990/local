@@ -1,0 +1,11 @@
+<aura:component >
+	<h1>This is Lighting Attribute component</h1>
+    <div>
+    <ul>
+    <div class="red"> This is red color</div>    
+    <div class="blue"> This is blue color</div>   
+    <div class="green"> This is green color</div>    
+    </ul>
+    
+    </div>
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component >
+<h1>world</h1>	
+    <div>
+		<div> This is yellow color </div>
+    	<div> This is green color with bol style</div>    
+    </div>
+</aura:component>

@@ -1,0 +1,18 @@
+<apex:page controller="searchemployee" sidebar="false">
+<apex:form >
+<apex:pageBlock title="Search Employee based on the following fields">
+
+<apex:pageblockSection >
+<apex:inputtext value="{!state}" label="state"/>
+<apex:inputtext value="{!yoe}" label="years of experience"/>
+<apex:inputtext value="{!education}" label="education"/>
+<apex:commandButton value="search" action="{!search}"/>
+<apex:commandButton value="next" action="{!next}"/>
+</apex:pageblockSection>
+<apex:pageblocktable value="{!emp1}" var="e">
+ <apex:column value="{!e.name}"/>
+</apex:pageblocktable>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

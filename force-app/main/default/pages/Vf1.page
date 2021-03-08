@@ -1,0 +1,6 @@
+<apex:page >
+first name:{!$User.FirstName}<br/>
+username:{!$User.Username}
+thank you {!$User.FirstName + ' '+$User.LastName}<br/>
+todays date is : {!month(today())} + + {!year(today())} 
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page showHeader="false" sidebar="false" standardController="contact">
+{!contact.firstname}
+{!contact.lastname}
+{!contact.owner.email}
+</apex:page>

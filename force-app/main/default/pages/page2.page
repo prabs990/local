@@ -1,0 +1,13 @@
+<apex:page standardController="account" recordSetVar="acc">
+<apex:form >
+<apex:pageBlock title="account list">
+<apex:pageblockTable value="{!acc}" var="a">
+<apex:column value="{!a.name}"/>
+<apex:column value="{!a.phone}"/>
+</apex:pageblockTable>
+<apex:commandButton value="previous page" action="{!previous}"/>
+<apex:commandButton value="next page" action="{!next}"/>
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>

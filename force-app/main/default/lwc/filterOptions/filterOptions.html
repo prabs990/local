@@ -1,0 +1,18 @@
+<template>
+        <div style="background-color: darkkhaki;">
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <h2 class="slds-text-heading_medium slds-m-bottom_medium slds-align_absolute-center slds-p-around_small" style="color: bisque;font-weight: bold;">
+                    Filter Options
+                </h2>
+                <div class="slds-p-around_small" style="color:brown">
+                    Bandwidth Sort &nbsp;&nbsp;&nbsp;
+                    <lightning-button label="Sort By Bandwidth" icon-name="action:sort" icon-position="left" onclick={handlesort} variant="Base"></lightning-button>
+                </div>
+            </div>
+            <div class="slds-p-around_small" style="color:brown">
+                Search Resource By Client:
+                <c-custom-lookup-l-w-c iconname="standard:client" objectname="Client__c" searchfield="Name" onselectedrec={handleLookup}></c-custom-lookup-l-w-c>
+            </div>
+            
+        </div>
+</template>

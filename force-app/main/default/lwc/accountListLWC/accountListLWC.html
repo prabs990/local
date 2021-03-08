@@ -1,0 +1,54 @@
+<template>
+    <lightning-card icon-name="custom:custom46" title="Account Search"> 
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input value={searchKey} label="Enter Account Name" placeholder="Enter here"
+                                 onchange={handleInput}>
+                </lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout vertical-align="center">
+            <template if:true={accountData}>
+                <template if:true={accountData} for:each={accountData} for:item="account">
+                    <!--<lightning-layout-item padding="around-small" key={account.Id}>
+                        <lightning-icon icon-name="action:approval" size="small"></lightning-icon> &nbsp;&nbsp;&nbsp;       
+                        <div style="font-size:120%"> {account.Name}   </div> 
+                        
+                    </lightning-layout-item>-->
+                    <!--<c-account-tile account={account} key={account.Id}></c-account-tile><br key={account.Id}>-->
+                    <c-account-tile account={account} key={account.Id} onselectt={handleSelect}></c-account-tile>
+                </template>
+            </template>
+        </lightning-layout>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small" if:true={selectedAccount}>
+                {selectedAccount.Name}
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    <lightning-card icon-name="standard:contact" title="Contact Search001" >
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input value={srchContact} label="Enter Contact" onchange={searchContact} placeholder="Enter Contact Name">
+
+                </lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout vertical-align="center" multiple-rows="33">
+            <tempate if:true={contactData}>
+                <template if:true={contactData} for:each={contactData} for:item="contact">
+                    <lightning-layout-item padding="around-small" key={contact.Id}>
+                        <p><lightning-icon icon-name="standard:contact" size="small"></lightning-icon>
+                        {contact.Name}</p>
+                    </lightning-layout-item>
+                </template>
+            </tempate>
+        </lightning-layout>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item  padding="around-small">
+                <lightning-button label="Find Contac" variant="brand" onclick={handleClick}>
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

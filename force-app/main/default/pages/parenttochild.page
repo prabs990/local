@@ -1,0 +1,32 @@
+<apex:page controller="parenttochild">
+    <apex:form >
+    	<apex:pageblock >
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="standard lookup" action="{!standardlookupstandardfield}"/>
+                <apex:commandButton value="custom lookup" action="{!standardobjectcustomlookup}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable title="displayed result is" value="{!acc}" var="a" >
+				<apex:column value="{!a.id}"/> 
+                <apex:column value="{!a.accountnumber}"/>
+                <apex:column value="{!a.name}"/>
+                <apex:column headerValue="Contacts">
+                    <apex:repeat value="{!a.contacts}" var="b">
+                        {!b.lastname}{!b.firstname}<br/>
+                    </apex:repeat>
+                    
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockTable title="displayed result is" value="{!acc}" var="a" >
+				<apex:column value="{!a.id}"/> 
+                <apex:column value="{!a.accountnumber}"/>
+                <apex:column value="{!a.name}"/>
+           		<apex:column headerValue="Contacts new">
+                    <apex:repeat value="{!a.CustomContacts__r}" var="b">
+                        {!b.lastname}{!b.firstname}<br/>
+                    </apex:repeat>
+                    
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

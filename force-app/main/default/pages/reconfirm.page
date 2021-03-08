@@ -1,0 +1,5 @@
+<apex:page controller="reconfirmController">
+<apex:form >
+<apex:commandButton value="Warning" onclick="return confirm('Do you want to proceed?');"  action="{!change}"/>
+</apex:form>
+</apex:page>

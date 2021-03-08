@@ -1,0 +1,24 @@
+<apex:page controller="account_setcontroller_pag_cont">
+    <apex:pageBlock >
+    	<apex:form >
+            <apex:outputLabel value="enter account name to search in account"/>
+            <apex:inputText value="{!accname}"/>
+            <apex:commandButton value="Search" action="{!search}"/>
+            <apex:commandButton value="Next" action="{!next}" rendered="{!hasnext}"/>
+            <apex:commandButton value="Previous" action="{!previous}" rendered="{!hasprevious}" />
+            <apex:commandButton value="First" action="{!first}" rendered="{!hasprevious}" />
+            <apex:commandButton value="Last" action="{!last}" rendered="{!hasnext}" />
+  			<apex:outputPanel style="color:#4AA02C;font-weight:bold">
+               <apex:actionStatus startText="fetching..." stopText=" " >
+           	   </apex:actionStatus>
+            </apex:outputPanel>                         
+              
+            <!--<apex:commandButton value="Refresh" action="{!refresh}"/>-->
+            <apex:pageBlockTable value="{!acclist}" var="a" rendered="{!flag1}" >
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.industry}"/>
+                
+            </apex:pageBlockTable>
+        </apex:form>
+    </apex:pageBlock>
+</apex:page>

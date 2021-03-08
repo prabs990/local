@@ -1,0 +1,16 @@
+<template>
+    <template if:true={projectRecords}>
+        <div class="slds-m-top_medium slds-m-bottom_x-large" style="background-color:black ; color: bisque;">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium slds-align_absolute-center" onmouseover={handlemHover}>
+                Available Projects
+            </h2>
+            <template for:each={projectRecords} for:item="record">
+               <div key={record.Id} >
+                <c-project-record record={record}></c-project-record>
+            </div>
+            </template>
+        </div>
+    </template>
+    <!-- filter options start-->
+    <c-filter-options ></c-filter-options>
+</template>

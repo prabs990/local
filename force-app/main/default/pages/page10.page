@@ -1,0 +1,21 @@
+<apex:page controller="hew" sidebar="false">
+<apex:form >
+<apex:pageBlock >
+<apex:pageblockSection >
+<apex:tabPanel switchType="ajax">
+<apex:tab label="price>0" labelwidth="300">
+<apex:pageblockTable value="{!m}" var="m1">
+<apex:column value="{!m1.name}"/>
+</apex:pageblockTable>
+</apex:tab>
+<apex:tab label="price<0" labelwidth="300">
+</apex:tab>
+<apex:pageblockTable value="{!m2}" var="m3">
+<apex:column value="{!m3.name}"/>
+</apex:pageblockTable>
+</apex:tabPanel>
+</apex:pageblockSection>
+<apex:commandButton value="g to page 9" action="{!page9}"/>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

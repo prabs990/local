@@ -1,0 +1,19 @@
+<apex:page standardController="Account" recordSetVar="acc">
+    <apex:form >
+   <apex:pageblock >
+    <apex:pageblockTable value="{!acc}" var="a" rows="10000">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:repeat value="{!a.contacts}" var="con">
+            <apex:column value="{!con.firstname}" headerValue="firstname" title="fname" />
+            <apex:column headerValue="lastname">
+            <apex:outputText value="{!con.lastname}"  label="lname" title="lname" />
+            </apex:column>
+        </apex:repeat>
+       
+    </apex:pageblockTable>
+    <apex:commandButton value="Next" action="{!next}"/> 
+    </apex:pageblock>
+    </apex:form>
+
+</apex:page>

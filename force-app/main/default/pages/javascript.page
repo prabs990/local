@@ -1,0 +1,13 @@
+<apex:page >
+	<apex:outputLabel > Enter Name</apex:outputLabel>
+    <script>
+    	function show()
+    	{
+            alert('this is alert');
+        }
+    </script>
+    <apex:form >
+    	<apex:inputText onchange="show()"/>
+    </apex:form>
+    <apex:outputLabel > Enter password</apex:outputLabel>
+</apex:page>

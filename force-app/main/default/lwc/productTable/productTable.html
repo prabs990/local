@@ -1,0 +1,148 @@
+<template>
+        <!-- enter inputs starts-->
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer" role="grid">      
+            <thead>  
+                <tr class="slds-text-title--caps">
+                    <th>           
+                        <label class="slds-checkbox">
+                            S.No
+                        </label>
+                    </th>
+                    <th scope="col">
+                        
+                        <div class="slds-truncate" title="Product">
+                            <lightning-icon icon-name="standard:orders" size="small"></lightning-icon> &nbsp;
+                            Product
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="">
+                            <lightning-icon icon-name="custom:custom90" size="small"></lightning-icon> &nbsp;
+                            <abbr class="slds-required" title="required">*</abbr>
+                            Quantity
+                        </div>
+                    </th>
+                     
+                    <th scope="col">
+                        <div class="slds-truncate" title="Sales Price">
+                            <lightning-icon icon-name="action:update" size="xx-small"></lightning-icon> &nbsp;
+                            <abbr class="slds-required" title="required">*</abbr>
+                            Sales Price
+                        </div>
+                    </th>
+                     
+                    <th scope="col">
+                        <div class="slds-truncate" title="Date">
+                            <lightning-icon icon-name="standard:date_input" size="small"></lightning-icon> &nbsp;
+                            <abbr class="slds-required" title="required">*</abbr>
+                            Date
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Family">
+                            <lightning-icon icon-name="custom:custom2" size="small"></lightning-icon> &nbsp;
+                            <abbr class="slds-required" title="required">*</abbr>
+                            Family
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template if:true={displayproducts}>
+                <template  for:each={displayproducts} for:item="record" for:index="i">
+                        
+                        <tr key={record.productid}>
+                                <th scope="col">
+                                    <label class="">
+                                        {i}
+                                    </label>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="">
+                                        {record.productname}
+                                        <lightning-icon class="slds-float_right" icon-name="utility:lock" size="xx-small" ></lightning-icon>
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="">
+                                        <lightning-input
+                                        data-id={record.productid}
+                                        type="number"
+                                        variant="label-hidden"
+                                        name="Quantity"
+                                        placeholder="Enter Quantity"
+                                        onchange={handleQuantity}
+                                        value={record.Quantity__c}>
+                                      </lightning-input>
+    <!-- Notes: Above Quantity__c is not valid and does not impact anything-->                                  
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="">
+                                        <lightning-input  
+                                        data-id={record.productid}
+                                        formatter="currency"
+                                        type="number"
+                                        variant="label-hidden"
+                                        name="saleprice"
+                                        onchange={handlePrice}
+                                        placeholder="$ Enter Sales Price Per Unit Here..."
+                                        value={record.UnitPrice}>
+                                        </lightning-input>
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="">
+                                        <lightning-input  
+                                        data-id={record.productid}
+                                        type="date"
+                                        variant="label-hidden"
+                                        name="date"
+                                        onchange={handleDate}
+                                        placeholder="Enter Date Here..."
+                                        value={record.Date}>
+                                        </lightning-input>
+                                    </div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="">
+                                        <div class="slds-form-element__control">
+                                            <div class="slds-select_container">
+                                              <select class="slds-select" data-id={record.productid} onchange={handlePicklist}>
+                                                    <!--iterate all picklist values from wrapper list using for:each loop-->
+                                                    <template if:true={stageNameValues.data}>
+                                                        <template for:each={stageNameValues.data} for:item="picklistItem">
+                                                            <option key={picklistItem.svalue} value={picklistItem.svalue}>
+                                                            {picklistItem.slabel}
+                                                            </option>
+                                                        </template>
+                                                    </template>
+                                              </select>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </th>
+    
+                                <th scope="col">
+                                    <div class = "slds-align_absolute-center">
+                                        <lightning-button-icon data-id={record.productid} class="lgc-bg"  icon-name="action:delete" onclick={handleDelete}>
+                                        </lightning-button-icon>
+                                     </div>
+                                     
+                                </th>
+                            </tr>
+                        
+                    </template>
+                </template>
+            </tbody>
+        </table>    
+        <lightning-layout>
+            <lightning-layout-item padding="around-small" style="margin-left: 2%;">
+                <lightning-button variant="brand" label="Save" onclick={handleProductSave} disabled={displaySave}>
+    
+                </lightning-button>
+        
+            </lightning-layout-item>
+        </lightning-layout>     
+        <!-- enter inputs ends-->
+</template>

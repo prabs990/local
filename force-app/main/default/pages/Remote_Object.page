@@ -1,0 +1,53 @@
+<apex:page >
+    <div class="slds-scope">
+    <apex:slds />
+    <div class="slds-media slds-no-space slds-grow">
+        <div class="slds-media__figure"> 
+            <span class="slds-avatar slds-avatar--medium">
+                <img src="{!URLFOR($Asset.SLDS,'assets/images/avatar1.jpg')}" alt=""/>
+            </span>
+        </div>
+        <div class="slds-media__body"> 
+            <p class="slds-text-title--caps slds-line-height--reset">Accounts</p>
+            <h1 class="slds-page-header__title slds-align-middle">My Accounts</h1>
+        </div>
+    </div>
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Account" jsShorthand="getAccount" fields="Name,Id">
+            <apex:remoteObjectField name="Industry" jsShorthand="Industrys">
+            </apex:remoteObjectField>
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+
+    <script>
+        var fetchAccount = function(){
+            var ac = new SObjectModel.getAccount();
+            console.log("ac"+JSON.stringify(ac));
+            ac.retrieve({ limit : 2}, function(err,records,event){
+                if(err){
+                    alert(err.message);
+                }else{
+                    console.log("records"+JSON.stringify(records));
+                    var ul = document.getElementById("AccountList");
+                    records.forEach(function(record){
+                        var acText = record.get("Name");
+                        acText += " -- ";
+                        acText += record.get("Industrys");
+                        
+                        var li = document.createElement("li");
+                        li.appendChild(document.createTextNode(acText));
+                        ul.appendChild(li);
+                    });
+                }
+            });
+        };
+    </script>
+   
+        
+    <h1> Account List to be displayed on Button Click</h1>
+    <p> Account </p>
+    <ul id="AccountList">
+    </ul>
+    <button onclick="fetchAccount()"> Click </button>
+    </div>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page controller="loginController" showHeader="false" sidebar="false">
+    <apex:form >
+        <apex:pageblock >
+            <apex:image url="{!$Resource.learning}" height="200" width="800" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.learning01}" height="100" width="100" style="margin-left:366px"/>
+            
+            <br/><br/>
+        <apex:pageblockSection columns="1">
+            
+                Please enter your login credentials to start the mock test<br/><br/>
+                <apex:inputField value="{!detail.username__c}"  label="Username" />
+                <apex:inputField value="{!detail.password__c}" label="Password"/>
+                <apex:inputField label="Timer" value="{!detail.timer__c}"/>
+
+        </apex:pageblockSection>
+
+        <apex:commandButton value="Login" action="{!login}" style="margin-left:195px"/>
+        </apex:pageblock>
+        
+    </apex:form>
+</apex:page>

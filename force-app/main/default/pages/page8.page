@@ -1,0 +1,17 @@
+<!--<apex:page controller="mymerchandise">
+<apex:form >
+<apex:pageblock title="merchandise record">
+<apex:pageBlockSection >
+<apex:inputField value="{!mer1.name}"/>
+</apex:pageBlockSection>
+{!decryptedString}
+<apex:commandButton value="update the record" action="{!doinsert}"/> 
+{!$label.Greeting}
+</apex:pageblock>
+</apex:form>
+</apex:page>-->
+<apex:page >
+<div escape="false">
+{!$Label.Greeting}
+</div>
+</apex:page>

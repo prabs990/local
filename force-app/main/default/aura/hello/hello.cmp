@@ -1,0 +1,19 @@
+<aura:component >
+ 
+    <div>
+        <lightning:layout >
+            <lightning:layoutItem padding="around-small">
+                <div>1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div>2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div>3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div>4</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

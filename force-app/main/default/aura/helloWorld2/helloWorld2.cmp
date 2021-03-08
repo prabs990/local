@@ -1,0 +1,5 @@
+<aura:component >
+    <c:helloheading1 />
+	<p>Hello world2</p>
+    <c:helloMessage2 message="confidential"/>
+</aura:component>

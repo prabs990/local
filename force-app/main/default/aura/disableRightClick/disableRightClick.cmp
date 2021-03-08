@@ -1,0 +1,33 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    <div class="slds-page-header">
+    	<div class="slds-page-header__row">
+        	<div class="slds-page-header__col-title">
+            	<div class="slds-media">
+                	<div class="slds-media__figure">
+                    	<span class="slds-icon_container slds-icon-standard-opportunity">
+                            <lightning:icon iconName="standard:opportunity"/>
+                            
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                    	<div class="slds-page-header__name">
+                        	<div class="slds-page-header__name__title">
+                            	<h1>
+                                	<span class="slds-page-header__title slds-truncate" >Disable right click</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta">Do not show link on status bar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div onmouseover="{!c.disableClick1}">
+        
+        <ui:button aura:id="alpha1" label="Download" press="{!c.disableClick1}"/>
+        <lightning:button aura:id="alpha2" label="Download01" onclick="{!c.disableClick2}"/>
+        <lightning:button aura:id="alpha3" label="Download02" onclick="{!c.disableClick3}"/>
+    </div>
+</aura:component>

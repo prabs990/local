@@ -1,0 +1,22 @@
+<apex:page controller="childtoparent">
+	<apex:form >
+        <apex:pageBlock >
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="standard search" action="{!standardlookup}"/>
+                <apex:commandButton value="custom lookup" action="{!customlookup}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable title="displayed records are" value="{!conlist}" var="c" rendered="{!flag1}">
+                <apex:column value="{!c.firstname}"/>
+                <apex:column value="{!c.lastname}"/>
+                <apex:column value="{!c.account.name}"/>
+                <apex:column value="{!c.account.industry}"/>
+            </apex:pageBlockTable>
+            <apex:pageBlockTable title="displayed records are" value="{!conlist}" var="c" rendered="{!flag2}">
+                <apex:column value="{!c.firstname}"/>
+                <apex:column value="{!c.lastname}"/>
+                <apex:column value="{!c.customaccount__r.name}"/>
+                <apex:column value="{!c.customaccount__r.industry}"/>
+           </apex:pageBlockTable> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

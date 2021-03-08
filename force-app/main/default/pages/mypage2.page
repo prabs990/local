@@ -1,0 +1,11 @@
+<apex:page standardController="Account">
+<apex:form >
+<apex:pageBlock title="account name is {!account.name}">
+<apex:pageblocktable value="{!account.contacts}" var="ac">
+<apex:column value="{!ac.name}"/>
+<apex:column value="{!ac.AssistantName}"/>
+<apex:column value="{!ac.Birthdate}"/>
+</apex:pageblocktable>
+</apex:pageBlock>
+</apex:form> 
+</apex:page>

@@ -1,0 +1,6 @@
+<aura:tokens>
+    <aura:token name="divFont" value="Arial,sans-serif"/>
+    <aura:token name="divFontWeight" value="bold"/>
+    <aura:token name="divMargin" value="5px"/>
+    <aura:token name="divColor" value="red"/>
+</aura:tokens>

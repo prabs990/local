@@ -1,0 +1,33 @@
+<apex:page controller="finduser">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageblockSection >
+            <apex:inputtext value="{!keyword}" label="Enter user name to search"/>
+        </apex:pageblocksection>
+        <apex:pageblocksection >    
+                    <apex:commandButton value="search user" action="{!search}"/>
+                     
+        </apex:pageblockSection>    
+        <apex:pageblockTable value="{!usrde}" var="u" id="pbid1">
+                <apex:column >
+                    <apex:inputtext value="{!u.name}" />
+                </apex:column>
+                <apex:column value="{!u.alias}"/>
+                <apex:column value="{!u.email}"/>
+                <apex:column value="{!u.isactive}" />
+                <apex:column >
+                <!--<apex:commandlink value="deactivate user" action="{!deactuser}" oncomplete="window.top.location.reload()">-->
+                <apex:commandlink value="deactivate user" action="{!deactuser}" rerender="pbid1">
+                <apex:param name="param1" assignTo="{!param2}" value="{!u.id}" />
+                </apex:commandlink>
+                </apex:column>
+                 <apex:column >
+                <apex:commandlink value="forgot password" action="{!resetpwrd}">
+                <apex:param name="param1" assignTo="{!param1}" value="{!u.id}" />
+                </apex:commandlink>
+                </apex:column>
+        </apex:pageblockTable> 
+             
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,3 @@
+<apex:page >
+ <h1> {!$Label.WelcomeMessage}</h1>
+</apex:page>

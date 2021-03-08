@@ -1,0 +1,12 @@
+<apex:page controller="errmessage">
+<apex:form >
+<apex:pageBlock >
+<apex:pageblocksection >
+<apex:inputfield value="{!mer.name}" />
+<apex:inputfield value="{!mer.Merchandise_Price__c}"/>
+<apex:pagemessages ></apex:pagemessages>
+<apex:commandButton value="insert" action="{!insert1}"/>
+</apex:pageblocksection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

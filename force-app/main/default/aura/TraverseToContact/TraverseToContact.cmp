@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:button label="ContactListSortingCode" variant="neutral" onclick="{!c.handleClick}"/>
+    <lightning:button label="ContactListSortingJS" variant="Success" onclick="{!c.handleClick01}"/>-->
+<!--	<iframe src="{! 'https://prabs-dev-ed.lightning.force.com/apex/inlineedit?parentId=' + v.recordId }" width="100%" height="500px;" frameBorder="0"/>    -->
+</aura:component>

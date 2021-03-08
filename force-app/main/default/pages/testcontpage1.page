@@ -1,0 +1,17 @@
+<apex:page controller="testCont">
+    <apex:form >
+        <apex:actionFunction name="doInit" action="{!init}" />
+               <apex:pageBlock >
+                    <apex:pageblockSection >
+                        <apex:outputField value="{!acc.name}"/>
+                    </apex:pageblockSection>
+               </apex:pageBlock>
+
+
+        <script>
+           window.onload=function(){
+               doInit();
+           };
+        </script>
+     </apex:form>    
+</apex:page>

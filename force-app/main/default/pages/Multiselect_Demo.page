@@ -1,0 +1,20 @@
+<apex:page controller="Multiselect_demo_controller">
+    <apex:pageBlock >
+       <apex:form >
+           <apex:outputLabel value="Select the value from multiselect picklist"/><br/>
+           <apex:pageBlockSection >
+           		<apex:inputField value="{!empobj.Sample_Picklist__c}">
+           		<apex:actionSupport action="{!selectedValuemethod}" event="onchange" reRender="pb1" />
+               </apex:inputField>    
+           </apex:pageBlockSection>
+       </apex:form>
+        
+       <apex:pageBlockSection id="pb1">
+           <apex:pageBlockSectionItem >
+               {!selectedvalue}<br/>
+               {!empobj.Sample_Picklist__c}<br/>
+               {!lststring};
+            </apex:pageBlockSectionItem>
+       </apex:pageBlockSection>
+   </apex:pageBlock>
+</apex:page>

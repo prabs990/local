@@ -1,0 +1,66 @@
+<template>
+    <template if:true={recorddisplay}>
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid" style="background: bisque;">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-account" title="Fonteva">
+                   
+                    <img src={fontevaLogo} class="slds-icon slds-icon_small"></img>
+                    <span class="slds-assistive-text">Name</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Name">
+                      <span>{recorddisplay.First_Name__c}</span>
+                    </a>
+                  </h2>
+                </div>
+                <!--<div class="slds-no-flex">
+                  <button class="slds-button slds-button_neutral">View Resume</button>
+                </div>-->
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <lightning-layout >
+                    <lightning-layout-item padding="around-small" size="5">
+                          <!--<img src={recorddisplay.selfpic__c} class="slds-icon_medium"></img>-->
+                          
+                          <!--<img src={trailheadImage} class="slds-icon_medium"></img><br>-->
+                          <img src={profilePicture} class="slds-icon_medium"></img><br>
+                          <div>
+                            <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-6">
+                              <span>Bandwidth</span>
+                              <span aria-hidden="true">
+                                <strong>{recorddisplay.Bandwidth__c}</strong>
+                              </span>
+                            </div>
+                            <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" aria-labelledby="progress-bar-label-id-6" role="progressbar">
+                              
+                                  <!--<span class="slds-progress-bar__value slds-progress-bar__value_success pmade" >-->
+                                    <span class={bandwidth} >    
+                                  <span class="slds-assistive-text">Progress: {recorddisplay.Bandwidth__c}%</span>
+                                </span>
+                              
+                            </div>
+                          </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="7" style="font-weight:bold">
+                        Experience         : {recorddisplay.Experience__c} Year <br>
+                        Current Allocation : {recorddisplay.Current_Allocation__c}<br>
+                        Pending Cases      : {recorddisplay.Pending_Cases__c} <br>
+                        Escalations        : {recorddisplay.Escalations__c}  <br>
+                        Upcoming Holiday   : {recorddisplay.Upcoming_Holiday__c}
+                  </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <!--<footer class="slds-card__footer">
+              <a class="slds-card__footer-action" href="javascript:void(0);">View All
+                <span class="slds-assistive-text">Accounts</span>
+              </a>
+            </footer>-->
+          </article>
+    </template>
+    
+</template>

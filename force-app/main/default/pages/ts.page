@@ -1,0 +1,13 @@
+<apex:page standardcontroller="Contact" recordSetVar="cons">
+  <apex:form >  
+      <apex:pageblock >
+          <apex:commandButton value="New record" action="/003/e"/>
+          <apex:pageblockSection >
+              <apex:pageBlockTable value="{!cons}" var="c">
+                  <apex:column value="{!c.FirstName}"/>
+                  <apex:column value="{!c.LastName}"/>
+              </apex:pageBlockTable>
+          </apex:pageblockSection>
+      </apex:pageblock>
+  </apex:form>    
+</apex:page>

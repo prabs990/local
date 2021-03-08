@@ -1,0 +1,71 @@
+<apex:page controller="contactExtension01">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Import the Design System style sheet -->
+        <link href="http://mottie.github.io/tablesorter/css/theme.default.css" rel="stylesheet" />
+     
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+                
+        <apex:slds />
+    </head>
+    <script type="text/javascript">
+        $(function(){
+          $("#myDummyTable").tablesorter({widgets: ['zebra']});
+        });   
+    </script>
+    <apex:form >
+    
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered tablesorter" id="myDummyTable">
+        <thead>
+        <tr class="slds-line-height_reset">
+            <apex:repeat value="{!$ObjectType.Contact.FieldSets.inlineEdit02}" var="f">
+                <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate">
+                        <apex:outputText styleClass="bold" value="{!$ObjectType.Contact.Fields[f].label}"/> &nbsp; &nbsp; &nbsp;
+                    </div>
+                </th>
+            </apex:repeat>
+        </tr>
+        </thead>
+        <tbody>
+        <apex:repeat value="{!ContactList}" var="obj">
+            <tr class="slds-hint-parent">
+                <apex:repeat value="{!fields}" var="f">
+                    <td data-label="CaseSubject" scope="row">
+                        <apex:outputField value="{!obj[f]}"/> &nbsp; &nbsp; &nbsp;
+                        <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton"/>
+                    </td>
+                </apex:repeat>
+            </tr>
+        </apex:repeat>
+        </tbody>
+    </table>        
+
+    <center>
+        <apex:commandButton value="Save" action="{!save}" id="saveButton" style="display:none"/>
+        <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton" style="display:none" />
+        
+        <apex:commandButton action="{!Beginning}" value="Start" disabled="{!disablePrevious}" />
+        <apex:commandButton action="{!Previous}" value="Previous"  disabled="{!disablePrevious}"/>
+        <apex:commandButton action="{!Next}" value="Next"  disabled="{!disableNext}"/>
+        <apex:commandButton action="{!End}"  value="End"  disabled="{!disableNext}"/>
+    </center>
+
+<!-- tablesorted is also good    
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!contactList}" var="c" id="myDummyTable" rows="500"  styleClass="tablesorter">
+            <apex:column value="{!c.firstName}"/>
+            <apex:column value="{!c.Level__c}"/>
+            <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+-->    
+    
+    </apex:form>
+    <!--<apex:enhancedList type="Account" height="300" rowsPerPage="10" id="AccountList" />-->
+</apex:page>

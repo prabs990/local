@@ -1,0 +1,16 @@
+<apex:page standardController="Account" extensions="account_offset_pagination_controller">
+    <apex:pageBlock >
+	<apex:form >    
+        <apex:outputLabel value="Enter wildcard for account name"/>
+        <apex:inputText value="{!accname}"/>
+        <apex:commandButton value="Search the account" action="{!displayAccounts}"/>
+        <apex:commandButton value="Next" action="{!Next}" disabled="{!disableNext}" />
+        <apex:commandButton value="Previous" action="{!Previous}" disabled="{!disablePrevious}"/>
+        <apex:pageBlock rendered="{!flag1}">
+        <apex:pageBlockTable value="{!acclist}" var="a">
+            <apex:column value="{!a.name}"/>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    </apex:pageBlock>    
+</apex:page>

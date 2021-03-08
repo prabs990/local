@@ -1,0 +1,7 @@
+<apex:page controller="c1">
+<apex:pageBlock >
+<apex:pageBlockTable value="{!a}" var="a1">
+<apex:column value="{!a1.name}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:page>

@@ -1,0 +1,10 @@
+<apex:page standardController="Merchandise__c">
+<apex:form >
+<apex:pageBlock title="merchandise is {!Merchandise__c.name}">
+<apex:pageblockTable value="{!Merchandise__c.Line_Items__r}" var="m1">
+<apex:column value="{!m1.name}"/>
+<apex:column value="{!m1.Line_Item_Price__c}"/>
+</apex:pageblockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

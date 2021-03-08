@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:registerEvent name="sampleCmpEvent" type="c:event1"/>
+    <lightning:button label="click" onclick="{!c.handleclick}" variant="brand"/>
+    
+</aura:component>

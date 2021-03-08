@@ -1,0 +1,20 @@
+<apex:page id="pg">
+	<apex:form id="fm">
+    	<apex:inputText id="one" />
+        <apex:inputText id="two"/>
+        <apex:outputLabel id="three"/>
+        <apex:commandButton value="Click Me" oncomplete="show()" onclick="demo()" reRender="fm" />
+        <script>
+        	function demo()
+        	{
+                var first= document.getElementById('pg:fm:one').value;
+                document.getElementById('pg:fm:two').value = first;
+            }
+        	function show()
+        	{
+                alert('I am show function');
+            }
+        
+        </script>
+    </apex:form>
+</apex:page>

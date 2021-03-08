@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="var1" type="String" default="ME"/>
+<h1> hello {!v.var1} </h1>	
+</aura:component>

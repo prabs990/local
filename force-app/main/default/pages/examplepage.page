@@ -1,0 +1,7 @@
+<apex:page controller="examplecontroller">
+    T1 : {!T1} <br/>
+    T2 : {!T2}
+    <apex:form >
+        <apex:commandLink value="refresh"/>
+    </apex:form>
+</apex:page>

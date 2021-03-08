@@ -1,0 +1,8 @@
+<apex:page sidebar="false" standardStylesheets="false" cache="false" standardController="Account">
+    <apex:includeLightning />
+    <div id="lightning" ></div> 
+    <script>
+        $Lightning.use("c:ListView", function() {$Lightning.createComponent("c:ListViewComponent",
+          { label : "" },"lightning",function(cmp) {});});
+    </script>
+</apex:page>

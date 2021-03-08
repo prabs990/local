@@ -1,0 +1,22 @@
+<aura:component controller="debuggingPicklistController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="contactInput" type="Contact" default="{
+                                              'sobjectType':'Contact',
+                                              'Name':'',
+                                              'Level__c':'Primary'                  
+                                                                }"/>
+    <!--<aura:attribute name="levelList" type="String[]" default="p,s,d"/>-->
+    <aura:attribute name="levelList" type="String[]"/>
+    <aura:attribute name="SSvariable" type="String"/>
+    <!--<lightning:input name="select1" label="Select Contact Level" required="true" value="{!v.contactInput.Level}">
+    </lightning:input>
+    Select Contact Level <force:inputField value="{!v.contactInput.Level__c}"/>-->
+    <lightning:input label="Name" value="{!v.contactInput.Name}"/>
+    <lightning:select value="{!v.contactInput.Level__c}" label="Third Picklist for level" onchange="{!c.selectedValue}">
+        <option value="choose">Choose one...</option>
+        <aura:iteration items="{!v.levelList}" var="s">
+        	<option value="{!s}">{!s}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:button label="Search Button" variant="brand" onclick="{!c.searchClicked}"/>
+</aura:component>

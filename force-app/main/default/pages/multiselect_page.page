@@ -1,0 +1,17 @@
+<apex:page controller="Multiselect_controller">
+    <apex:form >
+    <apex:selectList value="{!colorList}" size="3" multiselect="true">
+    	<apex:selectOptions value="{!colorDisplay}">
+        
+        </apex:selectOptions>
+        <apex:actionSupport event="onchange" reRender="outputpanel1"/>
+    	</apex:selectList>
+        </apex:form>
+    	<apex:pageBlock id="outputpanel1" title="Selected Colors Are">
+  		  	<apex:pageBlockSection >
+        		<apex:pageBlockSectionItem >
+        			{!colorList}    
+        		</apex:pageBlockSectionItem>    
+        	</apex:pageBlockSection>
+    	</apex:pageBlock>
+</apex:page>

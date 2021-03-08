@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="message" type="String" description="test attribute"/>
+    <p> This is heloMessage2 component + {!v.message}</p>
+</aura:component>

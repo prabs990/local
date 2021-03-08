@@ -1,0 +1,25 @@
+<apex:page controller="c5">
+  <Apex:form >
+  <apex:pageBlock >
+      <apex:pageblockSection >
+      <apex:tabPanel >
+      <apex:tab label="acc" labelWidth="300">
+      
+ 
+          <Apex:pageblockTable value="{!acc}" var="a">
+          <apex:column value="{!a.name}"/>
+          <apex:column value="{!a.stagename}"/>
+          </Apex:pageblockTable>
+      </apex:tab>
+      <apex:tab label="acc1" labelWidth="300">
+          <Apex:pageblockTable value="{!acc1}" var="a1">
+          <apex:column value="{!a1.name}"/>
+          <apex:column value="{!a1.stagename}"/>
+          </Apex:pageblockTable>
+
+      </apex:tab>
+        </apex:tabPanel>
+      </apex:pageblockSection>
+  </apex:pageBlock>
+</Apex:form>
+</apex:page>

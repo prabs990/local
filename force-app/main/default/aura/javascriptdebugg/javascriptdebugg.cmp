@@ -1,0 +1,11 @@
+<aura:component >
+	
+    <h1> Debugging javascript with dev tools</h1>
+    
+        Number 1 : <input type="number" name="fnumber" id="fnumber"/><br/>
+        Number 2: <input type="number" name="snumber" id="snumber"/><br/>
+        <button type="button" onclick="{!c.handleSubmit}">Submit</button>
+
+    Answer is <output type="number" name="answer" id="answer" value=""/> <br/>
+    <button type="button" onclick="{!c.handleGoogle}">Google</button>
+</aura:component>

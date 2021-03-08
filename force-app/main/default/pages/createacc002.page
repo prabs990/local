@@ -1,0 +1,10 @@
+<apex:page standardController="Merchandise__c">
+    <apex:form >
+    <apex:pageblock >
+    <apex:pageblocksection >
+    <apex:inputfield value="{!Merchandise__c.name}"/>
+    <apex:commandButton value="save" action="{!save}"/>
+    </apex:pageblocksection>
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

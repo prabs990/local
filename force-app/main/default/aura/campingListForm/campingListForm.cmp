@@ -1,0 +1,26 @@
+<aura:component >
+    <aura:attribute name="newItem" type="Camping_Item__c"
+                    default="{'sObjectType':'Camping_Item__c',
+                             'Price__c':0,
+                             'Quantity__c':0}"/>
+    <aura:registerEvent name="addItem" type="c:addItemEvent"/>
+    <div arial-labelledby="newcampingform">
+        <fieldset class="slds-box slds-theme--default slds-container--small">
+            <legend id="newcampingform" class="slds-text-heading--small">
+                Add Camping
+            </legend>
+            
+            <form class="slds-form--stacked">
+                <lightning:input aura:id="campingform" label="Camping Name" name="campingname"
+                                 value="{!v.newItem.Name}" required="true"/>
+                <lightning:input aura:id="campingform" label="Quantity" name="campingquantity" type="number"
+                                 value="{!v.newItem.Quantity__c}" required="true" min="1.0"/>
+                <lightning:input aura:id="campingform" label="Camping Price" name="campingprice" type="number"
+                                 value="{!v.newItem.Price__c}" required="true" formatter="currency"/>
+                <lightning:input aura:id="campingform" label="Packed ?" name="campingpacked" type="checkbox"
+                                 checked="{!v.newItem.Packed__c}" required="true" class="slds-p-around-small"/>
+                <lightning:button label="Create Camping Item" onclick="{!c.clickCreateItem}" class="slds-m-top--medium" variant="brand"/>
+            </form>
+        </fieldset>
+    </div>
+</aura:component>

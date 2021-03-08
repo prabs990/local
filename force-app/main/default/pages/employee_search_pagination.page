@@ -1,0 +1,33 @@
+<apex:page standardController="Employee__c"  extensions="employee_search_pagination_cont">
+    <apex:pageBlock title="Search Employee Based on Education, Year of Experience and State">
+		<apex:form >
+            <apex:pageBlockSection > 
+            	<apex:outputLabel value="Enter Education"/>
+            	<apex:inputText value="{!education}"/>
+            </apex:pageBlocksection>    
+            <apex:pageBlocksection >
+            	<apex:outputLabel value="Enter Year of Experience"/>
+            	<apex:inputText value="{!yoe}"/>
+            </apex:pageBlocksection>
+            <apex:pageBlocksection >
+            	<apex:outputLabel value="Enter State"/>
+            	<apex:inputText value="{!state}"/>
+            </apex:pageBlocksection>   
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <apex:panelGrid columns="3" bgcolor="red">
+            	<apex:commandButton value="search" action="{!search}"  status="status" />
+                <apex:commandButton value="previous" action="{!previous}" status="status" rendered="{!hasPrevious}"/>
+            	<apex:commandButton value="next" action="{!next}" status="status" rendered="{!hasNext}" />
+            <apex:actionStatus id="status" startText="checking.."/>
+            </apex:panelGrid>   
+            <apex:pageBlockTable value="{!empList}" var="e">
+            	<apex:column value="{!e.name}"/>
+                <apex:column value="{!e.Education__c}"/>
+                <apex:column value="{!e.State_Province__c}"/>
+                <apex:column value="{!e.Years_of_Experience__c}"/>
+            </apex:pageBlockTable>
+        </apex:form>    
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,43 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__body">
+            <div class="slds-card__body--inner slds-grid slds-wrap slds-grid--pull-paddedslds-p-around_large" style="padding-bottom: 2%;">
+                {objMetadataValues.PageDescription}
+            </div>
+            <template if:true={recordData}>
+                <template  for:each={recordData} for:item="record">
+                    <div key={record.aoiValue} style="padding-left: 2%;" class="slds-col slds-size_1-of-1">
+                        <br>
+                        <div class="slds-grid myDiv">
+                            <div class="slds-col slds-size_1-of-12">
+                                {record.aoi}
+                            </div>
+                            <div class=" slds-is-relative slds-col slds-size_1-of-12">
+                                <lightning-input id={record.aoiValue} type="checkbox" label="" value={record.aoiValue} checked={record.isChecked}
+                                                disabled={record.disableCheckbox} onchange={handleCheckbox}
+                                                data-prog-name ={record.aoi} style="padding-left: 1%;" onmouseover={handleMouseOver} onmouseout={handleMouseOut}> 
+                                </lightning-input>
+                                <section if:true={displayPopOver}>
+                                    <section if:true={record.disableCheckbox} class="slds-popover slds-nubbin_left" role="dialog" style="margin-left: 25%;">
+                                        <div class="slds-popover__body">
+                                            <p>This is tied to the subscription hence cannot be changed.</p>
+                                        </div>
+                                    </section>                        
+                                </section>                
+                            </div>
+                            <div class="slds-is-relative slds-col slds-size_11-of-12 slds-float_left">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <lightning-layout>
+                <lightning-layout-item padding="around-small" style="margin-left: 2%;">
+                    <lightning-button variant="brand" label="Save" onclick={handleSave} ></lightning-button>
+            
+                </lightning-layout-item>
+            </lightning-layout>                    
+        </div>
+    </article>
+</template>

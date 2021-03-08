@@ -1,0 +1,23 @@
+<apex:page id="pg">
+    <apex:form id="fm">
+    	<apex:inputText id="name" onchange="show()"/>
+        <apex:inputText id="age" onchange="demo()"/>
+        <script>
+        	function show()
+        	{
+             	var one =document.getElementById('pg:fm:name').value;   
+             	var two = document.getElementById('pg:fm:age').value;
+                alert(one+' show function '+two);
+            }
+        	function demo()
+        	{
+                var one =document.getElementById('pg:fm:name').value;   
+             	var two = document.getElementById('pg:fm:age').value;
+                alert(one+' demo function '+two);
+            }
+        </script>
+    </apex:form>
+    {! $Organization.name}<br/>
+    {! $Profile.name}<br/>
+    {! $User.lastname}<br/>
+</apex:page>

@@ -1,0 +1,31 @@
+<apex:page standardController="Employee__c" extensions="employeesearch">
+
+<apex:form id="form">
+<apex:pageblock >
+<apex:pageblocksection >
+    <apex:inputfield value="{!filter.Education__c}"/>
+    <apex:inputfield value="{!filter.Years_of_Experience__c}"/>
+    <apex:inputfield value="{!filter.State_Province__c}"/>
+    
+</apex:pageblocksection>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="search" action="{!search}"  reRender="form"/>
+ 
+
+<apex:pageBlock id="low" rendered="{!re}">
+<apex:pageblockTable value="{!emplist}" var="e">
+<apex:column value="{!e.name}"/>
+<apex:column value="{!e.Education__c}"/>
+<apex:column value="{!e.Years_of_Experience__c}"/>
+<apex:column value="{!e.State_Province__c}"/>
+</apex:pageblockTable>
+
+<apex:panelGrid columns="3">  
+<apex:commandButton value="next" action="{!next}" status="status" disabled="{!disablenext}"/>
+<apex:commandButton value="previous" action="{!previous}" status="status" disabled="{!disableprevious}"/>
+</apex:panelGrid>
+</apex:pageBlock>
+
+</apex:pageblock>
+</apex:form>
+</apex:page>

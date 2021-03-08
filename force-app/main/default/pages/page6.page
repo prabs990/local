@@ -1,0 +1,8 @@
+<apex:page controller="c2">
+<apex:pageBlock >
+ <apex:pageBlockTable value="{!opr}" var="o">
+ <apex:column value="{!o.name}"/>
+  <apex:column value="{!o.stagename}"/>
+ </apex:pageBlockTable> 
+</apex:pageBlock>
+</apex:page>

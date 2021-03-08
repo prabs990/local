@@ -1,0 +1,23 @@
+<apex:page standardController="Account" extensions="DisplayAccountExtension">
+    <apex:form >
+        <apex:pageBlock title="Account Information">
+        	<apex:outputLabel value="Select the account name from picklist">
+        	</apex:outputLabel>&nbsp;&nbsp;&nbsp;
+    		<apex:selectList size="1" value="{!accountIdSelected}">
+                <apex:selectOptions value="{!Accounts}" />
+                <apex:actionSupport action="{!searchContact}" event="onchange" reRender="pbb1" />
+        	</apex:selectList>
+        
+                
+            <apex:pageBlockSection id="pb1" title="Contact Details are" collapsible="false" rendered="{!displayPb1}">
+            	<apex:pageBlockTable value="{!conlist}" var="c">
+                	<apex:column value="{!c.account.name}"/>
+                	<apex:column value="{!c.firstname}"/>
+                	<apex:column value="{!c.lastname}"/>
+            	</apex:pageBlockTable>
+            </apex:pageBlockSection>  
+          
+         
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

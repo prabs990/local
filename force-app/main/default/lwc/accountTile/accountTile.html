@@ -1,0 +1,15 @@
+<template>
+  <!--  <lightning-card title={account.Name} icon-name="standard:account">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item>
+               <lightning-formatted-text value={account.Name}></lightning-formatted-text><br>
+                <lightning-formatted-email value={account.email__c}></lightning-formatted-email>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>-->
+    <lightning-layout vertical-align="center">
+        <lightning-layout-item padding="around-small">
+            <a href="Javascript:void(0)" onclick={handleSelect} >{account.Name}</a>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:handler  name="sampleCmpEvent" event="c:event1" action="{!c.handleactionf}" includeFacets="true"/>
+    hi...
+    <div>
+    {!v.body}
+        </div>
+</aura:component>

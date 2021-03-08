@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="chck" type="Boolean" default="false"/>
+    <aura:if isTrue="{!v.chck}">
+    This is true
+    <aura:set attribute="else">
+        This is false
+        </aura:set>
+    </aura:if>
+</aura:component>

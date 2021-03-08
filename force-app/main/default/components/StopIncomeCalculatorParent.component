@@ -1,0 +1,4 @@
+<apex:component >
+    <!--<c:StopIncomeCalculator/>-->
+    <!--<c:StopIncomeCalculatorList/>-->
+</apex:component>

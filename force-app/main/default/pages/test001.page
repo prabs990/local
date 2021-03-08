@@ -1,0 +1,21 @@
+<apex:page controller="test001controller">
+  <apex:form >
+  <apex:pageblock id="pdid">
+  <apex:includeScript value="/soap/ajax/35.0/connection.js" />
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:commandButton value="click me" action="{!redirectUrl}" reRender="pdid"/>
+  
+  <apex:outputPanel rendered="{!!show}"> 
+      show false
+   </apex:outputPanel>
+   
+  <apex:outputPanel rendered="{!show}"> 
+       hello
+       key string {!keyString}<br/>
+       decrypt string {!decryptedString } <br/>
+       encrypt new {!encodedCipherText}
+   </apex:outputPanel>
+   </apex:pageblock>
+  </apex:form>
+</apex:page>

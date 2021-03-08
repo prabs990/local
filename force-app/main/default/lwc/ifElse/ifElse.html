@@ -1,0 +1,17 @@
+<template>
+    <lightning-card icon-name="custom:custom4" title="Apex Class Test">
+        <lightning-layout multiple-rows="3" vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-button label="Method 1" onclick={handleClick}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button label="Method 2" variant="brand" onclick={handleMethod2}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <template for:each={mapValues} for:item="item" aria-multiline="true">
+                    Value is : {item.key} => {item.value} &nbsp;
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

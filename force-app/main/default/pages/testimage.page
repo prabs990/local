@@ -1,0 +1,8 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:image id="theImage" value="{!$Resource.step1alt}" width="200" height="200" alt="Description of image here"/>
+  <h1>Congratulations</h1>
+  
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

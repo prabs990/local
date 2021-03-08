@@ -1,0 +1,13 @@
+<apex:page controller="search1" sidebar="false">
+<apex:pageblock >
+<apex:form >
+<apex:inputText value="{!keyword}"/>
+<apex:commandButton value="search the city in employee object" action="{!dosearch}" />
+<!--<apex:pageBlock rendered="{!re}">-->
+<apex:pageblockTable value="{!mer}" var="m" title="employee name">
+<apex:column value="{!m.name}"/>
+</apex:pageblockTable>
+<!--</apex:pageBlock>-->
+</apex:form>
+</apex:pageblock>
+</apex:page>

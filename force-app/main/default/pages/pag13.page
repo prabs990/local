@@ -1,0 +1,13 @@
+<apex:page controller="c4">
+<apex:form >
+<apex:pageBlock >
+<apex:pageblockTable value="{!opp}" var="o">
+<apex:column value="{!o.name}"/>
+</apex:pageblockTable>
+<apex:pageBlockButtons >
+<apex:commandButton value="closed won" action="{!channel}"/>
+<apex:commandButton value="not closed won" action="{!direct}"/>
+</apex:pageBlockButtons>
+</apex:pageblock>
+</apex:form>
+</apex:page>

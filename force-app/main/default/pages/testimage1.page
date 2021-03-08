@@ -1,0 +1,8 @@
+<apex:page >
+   <apex:image id="theImage" value="{!$Resource.Step1}"  height="80" width="1000" alt="Description of image here"/>
+   <apex:image id="theImage1" value="{!$Resource.step2}"  height="80" width="900" alt="Description of image here"/>
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

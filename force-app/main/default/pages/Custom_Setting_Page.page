@@ -1,0 +1,10 @@
+<apex:page controller="Custom_Setting">
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockTable value="{!codeValues}" var="c">
+                <apex:column value="{!c.name}" />
+                <apex:column value="{!c.code__c}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

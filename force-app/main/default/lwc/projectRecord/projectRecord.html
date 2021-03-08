@@ -1,0 +1,27 @@
+<template>
+
+
+        <!-- Simple -->
+        <a>
+        <div class={hoverClass} onmouseover={handleHover} onmouseout={handleOut}>
+        <!--<div class="slds-p-around_medium lgc-bg">-->
+            <ul class="slds-has-dividers_bottom-space">
+                <!--<li class="slds-item">
+                    <lightning-tile label="Lightning component team" href="/path/to/somewhere">
+                        <p class="slds-truncate" title="7 Members">Projects</p>
+                    </lightning-tile>
+                </li>-->
+                <li class="slds-item">
+                    <lightning-tile label={record.Name}  type="media" onclick={handleClick}>
+                        <lightning-avatar  class="slds-avatar slds-avatar_circle slds-avatar_large" slot="media" src={displayLogo} fallback-icon-name="standard:person_account" alternative-text={record.Name}></lightning-avatar>
+                        <ul class="slds-list_horizontal slds-has-dividers_right">
+                            <!--<li class="slds-item"></li>-->
+                            <li class="slds-item">Account Manager : {record.Manager__c}</li>
+                        </ul>
+                    </lightning-tile>
+                </li>
+
+            </ul>
+        </div>
+    </a>
+</template>

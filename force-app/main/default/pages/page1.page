@@ -1,0 +1,12 @@
+<apex:page standardcontroller="Merchandise__c">
+<apex:form >
+<apex:pageBlock title="merchandise is {!Merchandise__c.name}">
+<apex:pageBlockSection >
+<apex:inputfield value="{!Merchandise__c.name}"/>
+<apex:inputfield value="{!Merchandise__c.Merchandise_Description__c}"/>
+<apex:outputtext value="{!Merchandise__c.Country__c}"/>
+<apex:commandButton value="save" action="{!save}"/>
+</apex:pageblocksection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

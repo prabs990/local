@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="whom" type="String" default="default value" />
+	Hello {!v.whom}
+</aura:component>

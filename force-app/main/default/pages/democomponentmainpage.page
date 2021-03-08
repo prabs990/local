@@ -1,0 +1,3 @@
+<apex:page >
+    <c:democomponent att1="account"></c:democomponent>
+</apex:page>

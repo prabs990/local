@@ -1,0 +1,7 @@
+<template>
+    <c-required-products onrequiredproducts={handleRequiredProducts}></c-required-products> <br>
+    <c-optional-products onoptionalproducts={handleOptionalProducts}></c-optional-products><br>
+    <template if:true={productsToDisplay}>
+        <c-product-table recordstodisplays = {productsToDisplay}></c-product-table>
+    </template>
+</template>

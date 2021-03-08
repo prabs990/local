@@ -1,0 +1,17 @@
+.THIS {
+
+}
+
+h1.THIS {
+    color:blue;
+    font-size:10px;
+}
+.THIS .yellow{
+    color:yellow;
+}
+.THIS .green{
+    color:green;
+}
+.THIS .red{
+    color:red;
+}

@@ -1,0 +1,21 @@
+<apex:page controller="mer_first_page_controller">
+
+    <style>
+        #abc{
+        background-color:red;
+        height:100px;
+        width:50px;
+        }
+    </style>
+	<apex:form >
+    <script>
+    document.getElementById("abc").innerHTML = "hello";
+    </script>
+        <p id ="abc"> </p>
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

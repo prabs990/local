@@ -1,0 +1,44 @@
+<apex:page controller="questionClass" sidebar="false" showHeader="false">
+
+    <apex:form id="pageform">
+        
+        <apex:pageBlock >
+        <div style="font-size:15px">
+        <input type="hidden" name="lname" value="{!timerValue}" id="demo"></input>
+        <apex:ActionFunction name="questionChange1" action="{!questionChange}"/>
+        <apex:outputPanel rendered="{!blockone}">
+            <apex:pageblockTable value="{!questionDisplay}" var="q">
+                <apex:column value="{!q.Column1__c}"/>
+                <apex:column value="{!q.column2__c}"/>
+                <apex:column value="{!q.column3__c}"/>
+            </apex:pageblockTable>
+        </apex:outputPanel>
+
+        <apex:outputPanel rendered="{!blocktwo}">
+            <apex:pageblockTable value="{!questionDisplay}" var="q">
+                <apex:column value="{!q.Column1__c}"/>
+                <apex:column value="{!q.column2__c}"/>
+                <apex:column value="{!q.column3__c}"/>
+            </apex:pageblockTable>
+        </apex:outputPanel>
+
+        <apex:outputPanel rendered="{!blockthree}">
+            <apex:pageblockTable value="{!questionDisplay}" var="q">
+                <apex:column value="{!q.Column1__c}"/>
+                <apex:column value="{!q.column2__c}"/>
+                <apex:column value="{!q.column3__c}"/>
+            </apex:pageblockTable>
+        </apex:outputPanel>
+        </div>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <script>
+
+            window.setTimeout(function(){questionChange1()},{!timerValue});
+            
+
+    
+    </script>
+        
+</apex:page>

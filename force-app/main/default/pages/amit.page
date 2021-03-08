@@ -1,0 +1,74 @@
+<apex:page standardController="Contact" recordSetVar="contacts">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Import the Design System style sheet -->
+        <link href="http://mottie.github.io/tablesorter/css/theme.default.css" rel="stylesheet" />
+     
+<!--        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>-->
+        <apex:includeScript value="{!$Resource.mini001}"/>
+        <apex:includeScript value="{!$Resource.mini002}"/>
+
+        <apex:slds />
+    </head>
+    <script type="text/javascript">
+        $(function(){
+          $("#myDummyTable").tablesorter({widgets: ['zebra']});
+        });   
+    </script>
+    <apex:form >
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered tablesorter" id="myDummyTable">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="contactName">Name</div>
+                </th>
+                <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="contactType">Contact Type</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <apex:repeat value="{!contacts}" var="c" rows="5">
+                    <tr class="slds-hint-parent">
+                        <th data-label="caseStatus" scope="row">
+                            <div class="slds-truncate" title="Cloudhub">
+                                <apex:outputField value="{!c.firstName}">
+                                    <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" />
+                                </apex:outputField>
+                            </div>
+                        </th>
+                        <td data-label="CaseSubject">
+                            <apex:outputField value="{!c.Level__c}">
+                                <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton"/>
+                            </apex:outputField>
+                        </td>
+                    </tr>
+                </apex:repeat>
+           
+        </tbody>
+    </table>
+    <center>
+    <apex:commandButton value="Save" action="{!save}" id="saveButton" style="display:none"/>
+    <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton" style="display:none" />
+    </center>
+    <br />
+    <br />
+    <!--
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!contacts}" var="c" id="myDummyTable" rows="5"  styleClass="tablesorter">
+            <apex:column value="{!c.firstName}"/>
+            <apex:column value="{!c.Level__c}"/>
+            <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    -->
+    
+    </apex:form>
+    <!--<apex:enhancedList type="Account" height="300" rowsPerPage="10" id="AccountList" />-->
+</apex:page>

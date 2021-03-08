@@ -1,0 +1,35 @@
+<template>
+    <lightning-card icon-name="custom:custom26" title="Page Navigation">
+        <lightning-layout vertical-align="center" multiple-rows="true">
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="Home Page" onclick={navigateToObjectHome} variant="brand"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="Record Page" onclick={navigateToRecord} variant="brand"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="Web Page" onclick={navigateToObjectHome} variant="brand"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="Tab Page" onclick={navigateToTabPage} variant="brand"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="Related List" onclick={navigateToRelatedList} variant="brand"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="Edit Page" onclick={navigateToObjectHome} variant="brand"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="New Record Page" onclick={navigateToNewRecordPage} variant="brand"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="List Page" onclick={navigateToList} variant="brand"></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout vertical-align="center" multiple-rows="true">
+            <lightning-layout-item padding="around-small" size="3" flexibility="auto">
+                <lightning-button label="toast message" onclick={showToast} variant="destructive"></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout >
+    </lightning-card>
+</template>

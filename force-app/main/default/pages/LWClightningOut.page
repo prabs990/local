@@ -1,0 +1,15 @@
+<apex:page >
+    <apex:includeLightning />
+    <div id="lightning" />
+    <script>
+        $Lightning.use("c:test", function(){
+            $Lightning.createComponent("c:accountListLightning",{
+            	check : "FROM LWCCC"
+            },
+            "lightning",
+            function(cmp){
+                console.log('inside lwc');
+            });
+        });
+    </script>
+</apex:page>

@@ -1,0 +1,13 @@
+<template>
+    <template if:true={pageNumber}>
+        <lightning-card>
+            <lightning-layout multiple-rows="2">
+                <lightning-layout-item padding="around-small">
+                    <c-pagination-child onnext={handleNext} onprevious={handlePrevious}></c-pagination-child>
+                </lightning-layout-item>
+            </lightning-layout>       
+        </lightning-card>
+    
+    </template>
+    Page number is : {pageNumber}
+</template>

@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="num1" type="integer" default="10"/>
+    <aura:attribute name="num2" type="integer" default="20"/>
+    <aura:attribute name="sum" type="integer" />
+    {!v.num1}<br/>
+    {!v.num2}
+</aura:component>

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="LWC Design Attribute Demo" icon-name="custom:custom2">
+        {InputVariable1}
+        {InputVariable2}
+        
+        <p>User Id is : {label.userId}</p>
+        <p>Label is : {label.MSG_JSON_FORMAT}</p>
+        <p>Static Resource is :
+            <img src={label.trailheadImage}/>
+        </p>
+        <!--<template if:true={}></template>-->
+        <!--<p>{accountObj.objectApiName}</p>-->
+        <p>{label.accountObj.objectApiName}</p>
+        <p>{label.nameField}</p>
+        <p>{label.currency}</p>
+    </lightning-card>
+</template>

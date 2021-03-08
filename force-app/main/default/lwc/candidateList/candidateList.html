@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-box slds-theme_shade slds-theme_alert-texture">
+        <p>
+            <template if:true={candidateRecords}>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={candidateRecords} for:item="recordItem">
+                        <lightning-layout-item  key={recordItem.Id}  size="6" padding="around-small">
+                            <c-candidate-record   recorddisplay={recordItem} projecttype={project}></c-candidate-record>  
+                        
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </template>
+        </p>
+      </div>
+</template>

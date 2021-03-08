@@ -1,0 +1,10 @@
+<apex:page controller="trymer">
+<apex:pageBlock >
+<apex:form >
+<apex:inputfield value="{!mer.name}"/>
+<apex:commandButton value="upsert" action="{!doupsert}"/>
+<apex:message />
+</apex:form>
+
+</apex:pageBlock>
+</apex:page>

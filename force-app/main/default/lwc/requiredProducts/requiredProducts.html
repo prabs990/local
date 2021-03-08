@@ -1,0 +1,53 @@
+<template>
+        <!-- mandatory products-->
+        <article class="slds-card">
+            <div class="slds-card__body">
+                <div class="slds-page-header">
+                    <div class="slds-page-header__row">
+                      <div class="slds-page-header__col-title">
+                        <div class="slds-media">
+                          <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                                <lightning-icon icon-name="standard:product_required" alternative-text="Mandatory Product" title="Mandatory Product"></lightning-icon>
+                              <span class="slds-assistive-text">Products</span>
+                            </span>
+                          </div>
+                          <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                              <div class="slds-page-header__name-title">
+                                <h1>
+                                  <span class="slds-page-header__title slds-truncate" title="Mandatory Products">Mandatory Products</span>
+                                </h1>
+                              </div>
+                            </div>
+                            <p class="slds-page-header__name-meta">Mandatory Products are disabled and cannot be changed</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <br>
+                <lightning-layout multiple-rows="true">     
+                <template if:true={requiredproducts}>
+                    <template  for:each={requiredproducts} for:item="record">
+                        <div key={record.productid} style="padding-left: 2%;">
+                                  
+                            <lightning-layout-item >
+                                <lightning-input id={record.productid} type="checkbox" label="" value={record.productid} checked={record.ischecked}
+                                                    disabled={record.isdisabled} onchange={handleCheckbox}
+                                                    data-prog-name ={record.productid} > 
+                                </lightning-input>
+                            </lightning-layout-item>
+                                
+                            <lightning-layout-item >
+                                {record.productname}
+                            </lightning-layout-item>
+                        
+                        </div>
+                    </template>
+                </template>
+            </lightning-layout>
+            </div>
+        </article>
+       
+</template>
